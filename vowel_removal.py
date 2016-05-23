@@ -1,6 +1,8 @@
-sentence = "List Comprehensions are the Greatest!"
-vowels = 'aeiouAEIOU'
+def vowel_removal():
 
-end = [letter for letter in sentence if letter not in vowels]
-end = ''.join(end)
-print(end)
+    sentence = "List Comprehensions are the Greatest!"
+    vowels = 'aeiouAEIOU'
+
+    end = [letter for letter in sentence if letter not in vowels]
+    end = ''.join(end)
+    print(end)
