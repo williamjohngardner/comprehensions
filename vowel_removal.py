@@ -1,11 +1,11 @@
+sentence = "List Comprehensions are the Greatest!"
+vowels = 'aeiouAEIOU'
 
-sentence = ("List Comprehensions are the Greatest!").lower()
-vowels = 'aeiou'
+# for vowel in vowels:
+#     sentence = sentence.replace(vowel, "")
 
+end = [letter for letter in sentence if letter not in vowels]
 
-for i in vowels:
-    sentence = sentence.replace(i, "")
+end = ''.join(end)
 
-#no_vowels = [letter.replace(vowels, "") for letter in sentence]
-
-print(sentence)
+print(end)
