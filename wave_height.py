@@ -10,15 +10,12 @@ heights = [item[1] for item in temperatures]
 del heights[0]
 
 
-dictionary = dict(zip(dates, heights))
+# dictionary = dict(zip(dates, heights))
 # dictionary = {}
 # for index, date in enumerate(dates):
 #     for height in heights:
 #         dictionary[dates] = height
 
-# nested_dictionary = {date: [height[index] for height in heights] for index, date in enumerate(dates)}
+nested_dictionary = {value: heights[index] for index, value in enumerate(dates)}
 
-my_list = []
-for index, value in dates.items():
-    my_list.append(value)
-print(my_list)
+print(nested_dictionary)
