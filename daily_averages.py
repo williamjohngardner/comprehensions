@@ -1,19 +1,21 @@
-def daily_averages():
+# def daily_averages():
 
-    from csv_parse import csv_parse
-    from wave_height import wave_height
+import datetime
+from wave_height import wave_height
+from day_conversion import get_day_of_week
 
-    temperatures = csv_parse()
+dictionary = wave_height()
 
-    dates = [item[5] for item in temperatures]
-    heights = [item[1] for item in temperatures]
+dates = [value for value in dictionary]
+# for each value in a dictionary, return the 'value' at the iterable index.
+dates_string = ' '.join(dates)
+# print(dates_string)
 
-    del dates[0]
-    # print(len(dates))
-    del heights[0]
+days = []
+def get_dow(date_string):
+    return days[datetime.datetime.strptime(dates_string, "%Y-%m-%d").weekday()]
 
-    float_heights = [float(i) for i in heights]
-    sum_float_heights = sum(float_heights)
-    average = sum_float_heights/len(dates)
+print([get_dow(dates_string) for day in days])
 
-    return average
+
+# return average

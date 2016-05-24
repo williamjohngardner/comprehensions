@@ -1,21 +1,18 @@
-# def wave_height():
+def wave_height():
 
-from csv_parse import csv_parse
+    from csv_parse import csv_parse
 
-temperatures = csv_parse()
+    temperatures = csv_parse()
 
-dates = [item[5] for item in temperatures]
-del dates[0]
-heights = [item[1] for item in temperatures]
-del heights[0]
+    dates = [item[5] for item in temperatures]
+    del dates[0]
+    heights = [item[1] for item in temperatures]
+    del heights[0]
 
+    # dictionary = dict(zip(dates, heights))
 
-# dictionary = dict(zip(dates, heights))
-# dictionary = {}
-# for index, date in enumerate(dates):
-#     for height in heights:
-#         dictionary[dates] = height
+    nested_dictionary = {value: heights[index] for index, value in enumerate(dates)}
+    # for each index and value pair in an enumerated list of dates, return 'value' as a key and the value of "heights"
+    # at the iterable index.
 
-nested_dictionary = {value: heights[index] for index, value in enumerate(dates)}
-
-print(nested_dictionary)
+    return nested_dictionary
