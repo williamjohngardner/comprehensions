@@ -1,3 +1,2 @@
-from wave_height import wave_height
-
-print(wave_height())
+from homework_grades import homework_grades
+print(homework_grades())
