@@ -8,6 +8,5 @@ def wave_height():
     heights = [item[1] for item in temperatures]
 
     dictionary = dict(zip(dates, heights))
-    print(dictionary)
 
     return dictionary
