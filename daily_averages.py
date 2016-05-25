@@ -1,36 +1,23 @@
-# def daily_averages():
+def daily_averages():
 
-import datetime
-from wave_height import wave_height
-from collections import defaultdict
+    import datetime
+    from wave_height import wave_height
+    from collections import defaultdict
 
-days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 
-dictionary = wave_height()
+    dictionary = wave_height()
 
-# print(dictionary)
+    nested_list = []
 
-nested_dictionary = {}
+    for key, value in dictionary.items():
+        day_index = datetime.datetime.strptime(key, "%Y-%m-%d").weekday()
+        nested_list = [days[day_index], value]
 
-for key, value in dictionary.items():
-    day_index = datetime.datetime.strptime(key, "%Y-%m-%d").weekday()
-    nested_dictionary = [days[day_index], value]
-    # print(nested_dictionary)
+    avg_dictionary = defaultdict(list)
 
-avg_dictionary = defaultdict()
-
-for key, value in nested_dictionary:
-    avg_dictionary[key].append(value)
+    avg_dictionary = [day_index.append(float(height)) for day, height in nested_list.items()]
     print(avg_dictionary)
 
 
-
-# dates = {value for value in dictionary.items()}
-# for each value in a dictionary, return the 'value' at the iterable index.
-# print(dates)
-# dates_string = ' '.join(dates)
-# print(dates_string)
-
-
-
-# return average
+    return average
